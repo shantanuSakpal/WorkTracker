@@ -47,14 +47,12 @@ function update() {
             <td>${element[0]}</td>
             <td>${element[1]}</td>
             <td><button class="button"  onclick="deleted(${index})">Done</button></td>
-            <td><button class="button">Modify</button></td>
+            <td><button class="button" onclick="modified(${index})">Modify</button></td>
         </tr>
         `
             tableBody.innerHTML = (str);
         });
     }
-
-
 }
 
 update();
@@ -74,4 +72,19 @@ function deleted(itemIndex) {
         localStorage.setItem('Items', JSON.stringify(arr));
     }
     update();
+}
+
+function modified(itemIndex)
+{
+    console.log("modified", itemIndex);
+    arrstr = localStorage.getItem('Items');
+    arr = JSON.parse(arrstr); 
+    let newtask = prompt("Enter the new task-")
+    
+    let newTime = prompt("Enter the new time-")
+   arr[itemIndex]=[newtask,newTime];
+   localStorage.setItem('Items',JSON.stringify(arr));
+    update();
+
+
 }
