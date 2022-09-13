@@ -2,8 +2,11 @@ function getAndUpdate() {
     let task = document.getElementById("inputTitle").value;
     let time = document.getElementById("inputTime").value;
 
-
-    if (localStorage.getItem("Items") == null) {
+    if(task=='' )
+    {
+        alert("It's not cool to do nothing !\nPlease add a task to do.");
+    }
+    else if (localStorage.getItem("Items") == null) {
         console.log("GaU1");
         arr = [];
         arr.push([task, time]);
