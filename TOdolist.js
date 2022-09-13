@@ -53,6 +53,8 @@ function update() {
             tableBody.innerHTML = (str);
         });
     }
+    document.getElementById("inputTitle").value = "";
+    document.getElementById("inputTime").value = "";
 }
 
 update();
