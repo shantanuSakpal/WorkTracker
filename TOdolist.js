@@ -43,7 +43,6 @@ function update() {
             str +=
                 `
         <tr>
-            
             <td>${element[0]}</td>
             <td>${element[1]}</td>
             <td><button class="button1" id="del" onclick="deleted(${index})">Done</button></td>

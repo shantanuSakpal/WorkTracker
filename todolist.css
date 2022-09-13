@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Gentium+Book+Plus&display=swap');
 
 body {
-    background-color: #00DDFF;
-    font-family: 'Roboto', sans-serif;
+    background-color: #c8f7ff;
+    font-family: 'Combo', cursive;
+    font-family: 'Gentium Book Plus', serif;
     color: black;
 
 }
@@ -10,83 +11,93 @@ body {
 .yourlist1 {
     color: black;
     text-decoration: none;
-    background-color: #0049B7;
+    background-color: #00b4d8;
     font-size: 1.2rem;
     padding: 5px 5pxpx;
     width: auto;
-    margin-top: 5px;
-    font-weight:bold;
+
+    font-weight: bold;
 }
+
 .yourlist2 {
     color: black;
     text-decoration: none;
-    background-color: #0049B7;
+    background-color: #00b4d8;
     font-size: 1.2rem;
     padding: 10px 15px;
     width: auto;
-    margin-top: 5px;
-    font-weight:bold;
-}
-.button{
+    margin-top: 10px;
     font-weight: bold;
+}
+
+.button {
+
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
-    background-color:  #f75990;
-    
+    background-color: #f37ac2;
+
 
 }
-.button1{
+
+.button1 {
+
     font-size: 1rem;
     font-weight: bold;
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
-    background-color:  #f75990;
-   
-    width:75px;
-   
+    background-color: #f37ac2;
+
+    width: 75px;
+
 }
-button#add:hover{
-    background-color: #ff0e63;
+
+button#add:hover {
+    background-color: #f15bb5;
 }
-button#del:hover{
-    background-color: #ff0e63;
+
+button#del:hover {
+    background-color: #f15bb5;
 }
-button#mod:hover{
-    background-color: #ff0e63;
+
+button#mod:hover {
+    background-color: #f15bb5;
 }
-button#toggle:hover{
-    background-color: #ff0e63;
+
+button#toggle:hover {
+    background-color: #f15bb5;
 }
 
 
-.tablehead{
-    
-    font-size: 1.2rem;
-    background-color:  #f75990;
-    width:75%;
-    border: solid 2px #f75990;
-    border-radius: 10px;
-   
-}
-.tableheadele{
-    border:solid #ff0e63 ;
-}
 
 .list1 {
-    margin: 2rem 2rem;
+
+    margin: auto;
     /* padding-left: 1rem;
     padding-right: 1rem; */
-    background-color:#7df9b7;
+    background-color: #7df9b7;
     border-radius: 10px;
     border-style: double;
     border-color: #0049B7;
     text-align: center;
-    width:75%;
-    
+    width: 50%;
+
 }
-.input1
-{
-    width:75%;
+
+.input1 {
+    width: 75%;
 }
+
+
+table,
+th,
+td {
+    border: 2px solid #00b4d8;
+    margin: 10px;
+    padding: 10px;
+}
+table{
+    border-radius: 10px;
+}
+
