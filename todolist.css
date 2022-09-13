@@ -48,8 +48,9 @@ body {
     border: none;
     padding: 5px 10px;
     background-color: #f37ac2;
-
+    margin-left: 2rem;
     width: 75px;
+  
 
 }
 
@@ -86,7 +87,15 @@ button#toggle:hover {
 }
 
 .input1 {
-    width: 75%;
+    margin-left: 6px;
+    width: 60%;
+    border-radius: 10px;
+}
+.input2 {
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    height:2rem;
 }
 
 
@@ -96,8 +105,13 @@ td {
     border: 2px solid #00b4d8;
     margin: 10px;
     padding: 10px;
+    
 }
 table{
     border-radius: 10px;
 }
-
+label {
+    display: inline-block;
+    
+    text-align: left;
+  }

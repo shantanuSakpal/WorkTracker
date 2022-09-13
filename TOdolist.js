@@ -1,10 +1,26 @@
+function compareSecondColumn(a, b) {
+    if (a[1] === b[1]) {
+        return 0;
+    }
+    else {
+        return (a[1] < b[1]) ? -1 : 1;
+    }
+}
+
 function getAndUpdate() {
     let task = document.getElementById("inputTitle").value;
-    let time = document.getElementById("inputTime").value;
+    let timeH = document.getElementById("inputTimeH").value;
+    let timeM = document.getElementById("inputTimeM").value;
+    let zone = document.getElementById("zone").value;
+    let time = timeH + " : " + timeM + " " + zone;
 
-    if(task=='' )
-    {
+    if (task == '') {
         alert("It's not cool to do nothing !\nPlease add a task to do.");
+    }
+    else if(timeH>"12" || timeM>"60")
+    {
+        alert("Please add valid time in 12-hour format.")
+
     }
     else if (localStorage.getItem("Items") == null) {
         console.log("GaU1");
@@ -34,9 +50,11 @@ function update() {
 
     }
     else {
+
         console.log("up2");
         arrstr = localStorage.getItem('Items');
         arr = JSON.parse(arrstr);
+        arr.sort(compareSecondColumn);
         let tableBody = document.getElementById("table");
         let str = "";
         arr.forEach((element, index) => {
@@ -45,15 +63,17 @@ function update() {
         <tr>
             <td>${element[0]}</td>
             <td>${element[1]}</td>
-            <td><button class="button1" id="del" onclick="deleted(${index})">Done</button></td>
-            <td><button class="button1" id="mod" onclick="modified(${index})">Modify</button></td>
+            <td style="border-right:none;"><button class="button1" id="del" onclick="deleted(${index})" style="margin: auto;">Done</button></td>
+            <td style="border-left:none;"><button class="button1" id="mod" onclick="modified(${index})" style="margin: auto;">Modify</button></td>
         </tr>
         `
             tableBody.innerHTML = (str);
         });
     }
     document.getElementById("inputTitle").value = "";
-    document.getElementById("inputTime").value = "";
+    document.getElementById("inputTimeH").value = "";
+    document.getElementById("inputTimeM").value = "";
+    document.getElementById("zone").value = "";
 }
 
 update();
@@ -75,17 +95,20 @@ function deleted(itemIndex) {
     update();
 }
 
-function modified(itemIndex)
-{
+function modified(itemIndex) {
     console.log("modified", itemIndex);
     arrstr = localStorage.getItem('Items');
-    arr = JSON.parse(arrstr); 
+    arr = JSON.parse(arrstr);
     let newtask = prompt("Enter the new task-")
-    
+    if (newtask == null || newtask == '') { return; }
     let newTime = prompt("Enter the new time-")
-   arr[itemIndex]=[newtask,newTime];
-   localStorage.setItem('Items',JSON.stringify(arr));
+    if (newTime == null || newTime == '') { newTime = arr[itemIndex][1] }
+    arr[itemIndex] = [newtask, newTime];
+    localStorage.setItem('Items', JSON.stringify(arr));
     update();
 
-
 }
+
+
+
+

@@ -32,12 +32,12 @@
                             aria-expanded="false">
                             Contact
                         </a>
-                </ul>
-                <ul class="dropdown-menu">
-                    <a class="nav-link" style="color: black ; margin-left: 10px;"
-                        href="mailto:shantanuesakpal1420@gmail.com">Email</a>
-                    <a class="nav-link" style="color: black ;margin-left: 10px;" href="tel:+9324456984 ">Telephone</a>
 
+                        <ul class="dropdown-menu" style=" background-color: #f37ac2;width: 100px;">
+                            <a class="nav-link" style="margin-left:10px ; " href="mailto:shantanuesakpal1420@gmail.com">Email</a>
+                            <a class="nav-link" style="margin-left:10px ;" href="tel:+9324456984 ">Telephone</a>
+
+                        </ul>
                 </ul>
 
 
@@ -47,31 +47,38 @@
 
     <div>
         <table style="text-align: center; margin: auto;width: 70%;">
-           
-                <tr style="background-color: #f37ac2;">
-                    <th >Task</th>
-                    <th >Time</th>
-                    <th colspan="2" >Actions</th>
-                </tr>
-           
 
-            <tbody id="table" ></tbody>
+            <tr style="background-color: #f37ac2;">
+                <th>Task</th>
+                <th>Time</th>
+                <th colspan="2">Actions</th>
+            </tr>
+
+
+            <tbody id="table"></tbody>
         </table>
     </div>
 
     <div class="yourlist2">Add task</div>
     <div style="margin: 2rem; font-weight: bold;">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">I have to</label>
-            <input type="text" class="form-control input1" id="inputTitle" placeholder="e.g. Water plants">
+            <label for="task" style="margin-left:1.5rem ;font-size: 1.2rem;">I have to</label>
+            <input type="text" class="input1" id="inputTitle" placeholder="e.g. Water plants">
             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">At</label>
-            <input type="text" class="form-control input1" id="inputTime" placeholder="e.g. 5:00 pm">
+        <div>
+            <label for="time" style="margin-left:1.5rem;margin-top:20px ;font-size: 1.2rem;  ">At : </label>
+            <input type="text" class="input2" id="inputTimeH" placeholder="HH">
+            <input type="text" class="input2" id="inputTimeM" placeholder="MM">
+            <label for="zone"> </label>
+            <select name="zone" style="border-radius: 10px; height:2rem;text-align: center;" id="zone">
+                <option disabled selected value="">AM/PM</option>
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
         </div>
     </div>
-    <button type="submit" id="add" class="button1" style="margin-left: 2rem; margin-bottom: 2rem;">Add</button>
+    <button type="submit" id="add" class="button1" style="margin-left: 3rem;">Add</button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
