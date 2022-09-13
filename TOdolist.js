@@ -43,11 +43,11 @@ function update() {
             str +=
                 `
         <tr>
-            <th scope="row">${index + 1}</th>
+            
             <td>${element[0]}</td>
             <td>${element[1]}</td>
-            <td><button class="button"  onclick="deleted(${index})">Done</button></td>
-            <td><button class="button" onclick="modified(${index})">Modify</button></td>
+            <td><button class="button1" id="del" onclick="deleted(${index})">Done</button></td>
+            <td><button class="button1" id="mod" onclick="modified(${index})">Modify</button></td>
         </tr>
         `
             tableBody.innerHTML = (str);

@@ -11,7 +11,7 @@ body {
     color: black;
     text-decoration: none;
     background-color: #0049B7;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 5px 5pxpx;
     width: auto;
     margin-top: 5px;
@@ -21,7 +21,7 @@ body {
     color: black;
     text-decoration: none;
     background-color: #0049B7;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 10px 15px;
     width: auto;
     margin-top: 5px;
@@ -37,22 +37,56 @@ body {
 
 }
 .button1{
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
     background-color:  #f75990;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-
+   
+    width:75px;
+   
+}
+button#add:hover{
+    background-color: #ff0e63;
+}
+button#del:hover{
+    background-color: #ff0e63;
+}
+button#mod:hover{
+    background-color: #ff0e63;
+}
+button#toggle:hover{
+    background-color: #ff0e63;
 }
 
-.list {
-    margin: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+
+.tablehead{
+    
+    font-size: 1.2rem;
+    background-color:  #f75990;
+    width:75%;
+    border: solid 2px #f75990;
+    border-radius: 10px;
+   
+}
+.tableheadele{
+    border:solid #ff0e63 ;
+}
+
+.list1 {
+    margin: 2rem 2rem;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
     background-color:#7df9b7;
     border-radius: 10px;
     border-style: double;
     border-color: #0049B7;
+    text-align: center;
+    width:75%;
+    
+}
+.input1
+{
+    width:75%;
 }
