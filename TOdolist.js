@@ -3,31 +3,43 @@ function compareSecondColumn(a, b) {
         return 0;
     }
     else {
-        return ((a[1] < b[1]) ) ? -1 : 1;
+        return ((a[1] < b[1])) ? -1 : 1;
     }
 }
 
 function getAndUpdate() {
     let task = document.getElementById("inputTitle").value;
     let timeH = document.getElementById("inputTimeH").value;
-    if(timeH.length==1)
-    {
-        timeH="0"+timeH;
-    }
     let timeM = document.getElementById("inputTimeM").value;
-    if(timeM.length==1)
-    {
-        timeM="0"+timeM;
+
+
+    if (timeM.length == 1) {
+        timeM = "0" + timeM;
     }
+
     let zone = document.getElementById("zone").value;
-    let time = timeH + " : " + timeM + " " + zone;
-   
-    timeH = Number.parseInt(timeH);
+    if (zone == "PM") {
+        timeH = Number.parseInt(timeH);
+        if (timeH != 12) { timeH += 12; }
+        timeH = timeH.toString();
+    }
+    else {
+        if (timeH.length == 1) {
+            timeH = "0" + timeH;
+        }
+        if(timeH=="12")
+        {
+            timeH="00";
+        }
+    }
+    let time = timeH + " : " + timeM;
     timeM = Number.parseInt(timeM);
+
+
     if (task == '') {
         alert("It's not cool to do nothing !\nPlease add a task to do.");
     }
-    else if (timeH > 12 || timeM >= 60) {
+    else if (timeH > 24 || timeM >= 60) {
         alert("Please add valid time in 12-hour format.")
 
     }
@@ -63,8 +75,8 @@ function update() {
         console.log("up2");
         arrstr = localStorage.getItem('Items');
         arr = JSON.parse(arrstr);
-        
         arr.sort(compareSecondColumn);
+        localStorage.setItem('Items', JSON.stringify(arr));
         let tableBody = document.getElementById("table");
         let str = "";
         arr.forEach((element, index) => {
@@ -114,6 +126,7 @@ function modified(itemIndex) {
     let newTime = prompt("Enter the new time-")
     if (newTime == null || newTime == '') { newTime = arr[itemIndex][1] }
     arr[itemIndex] = [newtask, newTime];
+    arr.sort(compareSecondColumn);
     localStorage.setItem('Items', JSON.stringify(arr));
     update();
 
